@@ -1,9 +1,9 @@
-Building SmallChange
+Building SafariCoin
 
-See doc/readme-qt.rst for instructions on building smallchange-qt,
+See doc/readme-qt.rst for instructions on building safaricoin-qt,
 the intended-for-end-users, nice-graphical-interface, reference
-implementation of SmallChange.
+implementation of SafariCoin.
 
-See doc/build-*.txt for instructions on building smallchange,
+See doc/build-*.txt for instructions on building safaricoin,
 the intended-for-services, no-graphical-interface, reference
-implementation of SmallChange.
+implementation of SafariCoin.
