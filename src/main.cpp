@@ -830,10 +830,10 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 500 * COIN;
 
-    if(nHeight == 128) // fix for 'lost' 127 blocks
-        nSubsidy = 63500;
+    if(nHeight == 130) // fix for 'lost' 129 blocks
+        nSubsidy = 32500 * COIN;
     else if(nHeight < 259200) // lower block reward within the first 3 days
-        nSubsidy = 250;
+        nSubsidy = 250 * COIN;
         
     if(nHeight > 10519200) // no block reward after 5 years
         nSubsidy = 0;
