@@ -828,21 +828,19 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 500 * COIN;
+    int64 nSubsidy = 200 * COIN;
 
-    if(nHeight == 130) // fix for 'lost' 129 blocks
-        nSubsidy = 32500 * COIN;
-    else if(nHeight < 259200) // lower block reward within the first 3 days
-        nSubsidy = 250 * COIN;
+    if(nHeight < 4320) // lower block reward within the first 3 days
+        nSubsidy = 100 * COIN;
         
-    if(nHeight > 10519200) // no block reward after 5 years
+    if(nHeight > 1576800) // no block reward after 3 years
         nSubsidy = 0;
 
     return nSubsidy + nFees;
 }
 
 static const int64 nTargetTimespan = 1.00 * 24 * 60 * 60; // SafariCoin: 1.00 days
-static const int64 nTargetSpacing = 60; // SafariCoin: 1 minute, 60 x 60 x 24 blocks a day
+static const int64 nTargetSpacing = 60; // SafariCoin: 1 minute, 1440 blocks a day
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
