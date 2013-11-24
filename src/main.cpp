@@ -830,9 +830,11 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 {
     int64 nSubsidy = 500 * COIN;
 
-
-    if(nHeight < 17280) // no block reward within the first 3 days
-        nSubsidy = 0;
+    if(nHeight == 128) // fix for 'lost' 127 blocks
+        nSubsidy = 63500;
+    else if(nHeight < 259200) // lower block reward within the first 3 days
+        nSubsidy = 250;
+        
     if(nHeight > 10519200) // no block reward after 5 years
         nSubsidy = 0;
 
@@ -840,7 +842,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
 }
 
 static const int64 nTargetTimespan = 1.00 * 24 * 60 * 60; // SafariCoin: 1.00 days
-static const int64 nTargetSpacing = 60; // SafariCoin: 1 minute
+static const int64 nTargetSpacing = 60; // SafariCoin: 1 minute, 60 x 60 x 24 blocks a day
 static const int64 nInterval = nTargetTimespan / nTargetSpacing;
 
 // Thanks: Balthazar for suggesting the following fix
