@@ -828,12 +828,17 @@ uint256 static GetOrphanRoot(const CBlock* pblock)
 
 int64 static GetBlockValue(int nHeight, int64 nFees)
 {
-    int64 nSubsidy = 200 * COIN;
+    // Safaricoin does not have a mining subsidy, simply because FPGA and the whole mining arms race makes
+    // cryptocurrencies undemocratic. Rather than people simply obtaining currency via an IPO, they invest
+    // and vote with hashrate. So Safaricoin will be distributed by IPO with a limit on the amount that can
+    // be bought by any one individual.
+    // Hashrate is paid for by transaction fees, which will be a fixed %age of transaction
+    int64 nSubsidy = 0;
 
-    if(nHeight < 4320) // lower block reward within the first 3 days
-        nSubsidy = 100 * COIN;
+    if(nHeight < 4320) // quickly exhaust coins to accumulate for IPO
+        nSubsidy = 10000 * COIN;
         
-    if(nHeight > 1576800) // no block reward after 3 years
+    if(nHeight >= 4320) // no block reward after limit
         nSubsidy = 0;
 
     return nSubsidy + nFees;
