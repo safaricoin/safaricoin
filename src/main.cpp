@@ -836,7 +836,7 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     int64 nSubsidy = 0;
 
     if(nHeight < 4320) // quickly exhaust coins to accumulate for IPO
-        nSubsidy = 10000 * COIN;
+        nSubsidy = 100000 * COIN;
         
     if(nHeight >= 4320) // no block reward after limit
         nSubsidy = 0;
