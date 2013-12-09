@@ -835,12 +835,6 @@ int64 static GetBlockValue(int nHeight, int64 nFees)
     // Hashrate is paid for by transaction fees, which will be a fixed %age of transaction
     int64 nSubsidy = 0;
 
-    if(nHeight < 4320) // quickly exhaust coins to accumulate for IPO
-        nSubsidy = 100000 * COIN;
-        
-    if(nHeight >= 4320) // no block reward after limit
-        nSubsidy = 0;
-
     return nSubsidy + nFees;
 }
 
