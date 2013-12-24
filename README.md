@@ -12,16 +12,21 @@ What is Safaricoin?
 Safaricoin is a version of Bitcoin using the Scrypt algorithm as a proof-of-work algorithm.
  - 1 minute block targets
  - subsidy halves in 840k blocks
- - ~50 million total coins
+ - ~65 million total coins
 
 The rest is almost the same as Litecoin.
- - 200 coins per block
- - 2016 blocks to retarget difficulty
 
 Safaricoin is intended as an intermediate currency for mobile money transfers within East Africa,
 with capacity to intergrate seamlessly with the global cryptocoin economy for international
 transfers. As such, the coins are distributed via IPO to the agents in the network and mining is
 not the primary way of getting new coins.
+
+Is Safaricoin Premined?
+--------------------
+
+Safaricoin is designed for use in Africa chiefly, where the resources to do significant mining are
+virtually non-existent. Thus IPOs are the best way to distribute currency, and mining is exclusively
+for network functioning and is done by Funtrench Limited.
 
 Transaction fees will be set as a small percentage of the value sent and fixed.
 
